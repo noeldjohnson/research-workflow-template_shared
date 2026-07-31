@@ -28,7 +28,8 @@ paths:
 ## 3. Domain Correctness
 
 <!-- Customize for your field's known pitfalls -->
-- Verify estimator implementations match slide formulas
+- Verify estimator implementations match the formulas in the manuscript
+- Ensure numbers written to `Tables/`/`Figures/` match what the text reports
 - Check known package bugs (document below in Common Pitfalls)
 
 ## 4. Visual Identity
@@ -55,12 +56,13 @@ theme_custom <- function(base_size = 14) {
 
 ### Figure Dimensions for Paper
 ```r
-ggsave(filepath, width = 6.5, height = 4, bg = "transparent", device = cairo_pdf)
+# Vector PDF sized to the paper's text/column width; cairo_pdf embeds fonts cleanly
+ggsave(filepath, width = 6.5, height = 4, device = cairo_pdf)
 ```
 
 ## 5. RDS Data Pattern
 
-**Heavy computations saved as RDS; slide rendering loads pre-computed data.**
+**Heavy computations saved as RDS; table/figure scripts load the pre-computed data instead of recomputing.**
 
 ```r
 saveRDS(result, file.path(out_dir, "descriptive_name.rds"))
@@ -71,7 +73,8 @@ saveRDS(result, file.path(out_dir, "descriptive_name.rds"))
 <!-- Add your field-specific pitfalls here -->
 | Pitfall | Impact | Prevention |
 |---------|--------|------------|
-| Missing `bg = "transparent"` | White boxes on slides | Always include in ggsave() |
+| Raster output (`.png`) for the paper | Blurry figures in print | Save vector PDF via `device = cairo_pdf` |
+| Figure sized without regard to text width | Illegible labels when scaled down | Set `ggsave()` width/height to the on-page size |
 | Hardcoded paths | Breaks on other machines | Use relative paths |
 
 ## 7. Line Length & Mathematical Exceptions

@@ -1,38 +1,38 @@
 ---
 name: visual-audit
-description: Perform adversarial visual audit of Quarto or Beamer slides checking for overflow, font consistency, box fatigue, and layout issues.
-argument-hint: "[QMD or TEX filename]"
-allowed-tools: ["Read", "Grep", "Glob", "Write", "Task"]
+description: Perform an adversarial layout/typesetting audit of the LaTeX manuscript checking for overfull boxes, table/figure sizing, float placement, and page-break problems.
+argument-hint: "[TEX filename, defaults to main]"
+allowed-tools: ["Read", "Grep", "Glob", "Write", "Bash", "Task"]
 ---
 
-# Visual Audit of Slide Deck
+# Layout Audit of the Manuscript
 
-Perform a thorough visual layout audit of a slide deck.
+Perform a thorough layout and typesetting audit of the compiled paper.
 
 ## Steps
 
-1. **Read the slide file** specified in `$ARGUMENTS`
+1. **Identify the file** specified in `$ARGUMENTS` (defaults to `Paper/main.tex`).
 
-2. **For Quarto (.qmd) files:**
-   - Render with `quarto render Quarto/$ARGUMENTS`
-   - Open in browser to inspect each slide
+2. **Compile so there is a fresh log to inspect** (see `/compile-latex`):
+   ```bash
+   cd Paper && TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode main.tex >/dev/null 2>&1
+   ```
+   Then read `Paper/main.log` for concrete warnings.
 
-3. **For Beamer (.tex) files:**
-   - Compile and check for overfull hbox warnings
+3. **Launch the slide-auditor agent** (the layout/typesetting auditor) on the manuscript, or audit directly for:
 
-4. **Audit every slide for:**
+   **OVERFULL / UNDERFULL BOXES:** `Overfull \hbox` (esp. > 5pt), display math that should break, un-hyphenatable terms
+   **TABLE LAYOUT:** Tables wider than `\textwidth` (need `\resizebox`/`\small`/`booktabs`), rows split across pages, misaligned decimals
+   **FIGURE LAYOUT:** Figures over-wide or scaled illegibly small, raster where vector (PDF) is expected, missing `\centering`, caption placement
+   **FLOAT PLACEMENT:** Floats drifting far from their `\ref`, float clumps, rigid `[h]`/`[H]` causing whitespace gaps
+   **PAGE BREAKS:** Widows/orphans, headings stranded at page bottom, equations split across pages
+   **REFERENCES:** `??` from unresolved `\ref`, numbering gaps
 
-   **OVERFLOW:** Content exceeding slide boundaries
-   **FONT CONSISTENCY:** Inline font-size overrides, inconsistent sizes
-   **BOX FATIGUE:** 2+ colored boxes on one slide, wrong box types
-   **SPACING:** Missing negative margins, missing fig-align
-   **LAYOUT:** Missing transitions, missing framing sentences, semantic colors
+4. **Produce a report** organized by issue with severity and a specific recommendation, citing the exact `main.log` line where one exists.
 
-5. **Produce a report** organized by slide with severity and recommendations
-
-6. **Follow the spacing-first principle:**
-   1. Reduce vertical spacing with negative margins
-   2. Consolidate lists
-   3. Move displayed equations inline
-   4. Reduce image/SVG size
-   5. Last resort: font size reduction (never below 0.85em)
+5. **Follow the fix-priority principle:**
+   1. Fix the structure (break an equation, switch to `booktabs`, adjust the float specifier)
+   2. Resize the table/figure to `\textwidth`/`\columnwidth`
+   3. Prefer `[tbp]` float placement over forcing `[H]`
+   4. Use `\resizebox` for a genuinely wide table
+   5. Last resort: reduce font size (`\small`, within journal limits) or add manual spacing

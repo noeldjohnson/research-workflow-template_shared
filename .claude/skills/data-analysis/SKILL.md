@@ -17,9 +17,9 @@ Run an end-to-end data analysis in R: load, explore, analyze, and produce public
 ## Constraints
 
 - **Follow R code conventions** in `.claude/rules/r-code-conventions.md`
-- **Save all scripts** to `scripts/R/` with descriptive names
-- **Save all outputs** (figures, tables, RDS) to `output/`
-- **Use `saveRDS()`** for every computed object — Quarto slides may need them
+- **Save all scripts** to `scripts/` with descriptive names
+- **Save intermediate objects** (RDS, diagnostics) to `output/`; **paper-ready tables** to `Tables/` (`.tex`) and **paper-ready figures** to `Figures/` (`.pdf`)
+- **Use `saveRDS()`** for every computed object — so tables/figures can be regenerated without re-running the whole analysis
 - **Use project theme** for all figures (check for custom theme in `.claude/rules/`)
 - **Run r-reviewer** on the generated script before presenting results
 
@@ -59,14 +59,13 @@ Based on the research question:
 **Tables:**
 - Use `modelsummary` for regression tables (preferred) or `stargazer`
 - Include all standard elements: coefficients, SEs, significance stars, N, R-squared
-- Export as `.tex` for LaTeX inclusion and `.html` for quick viewing
+- Export as `.tex` to `Tables/` for `\input` into the manuscript (add a comment noting the generating script)
 
 **Figures:**
 - Use `ggplot2` with project theme
-- Set `bg = "transparent"` for Beamer compatibility
+- Save vector PDF to `Figures/` for LaTeX inclusion: `ggsave(..., device = cairo_pdf)`
 - Include proper axis labels (sentence case, units)
-- Export with explicit dimensions: `ggsave(width = X, height = Y)`
-- Save as both `.pdf` and `.png`
+- Export with explicit dimensions sized to the paper's column/text width: `ggsave(width = X, height = Y)`
 
 ### Phase 5: Save and Review
 

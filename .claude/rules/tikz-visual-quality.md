@@ -1,12 +1,12 @@
 ---
 paths:
-  - "Slides/**/*.tex"
+  - "Paper/**/*.tex"
   - "Figures/**/*.tex"
 ---
 
 # TikZ Visual Quality Standards
 
-**Every TikZ diagram must be visually polished before it is considered complete.**
+**Every TikZ diagram used as a figure in the paper must be visually polished before it is considered complete.**
 
 ## Label Positioning
 
@@ -22,7 +22,7 @@ paths:
 - **Solid dots/lines** = observed outcomes, realized paths
 - **Hollow circles/dashed lines** = counterfactual outcomes, unrealized paths
 - Use consistent colors for semantic meaning (positive, negative, neutral)
-- Define colors in your Beamer theme for reuse
+- Define colors in your LaTeX preamble (`Preambles/header.tex`) for reuse
 
 ### Line Weights
 - Axes: `thick`
@@ -32,7 +32,7 @@ paths:
 
 ## Spacing and Proportions
 
-- Standard scale: `[scale=1.1]` for full-width diagrams
+- Standard scale: `[scale=1.1]` for text-width diagrams (size to `\textwidth`/`\columnwidth`)
 - Dot radius: `4pt` for data points
 - Minimum 0.2 units between any label and nearest graphical element
 - Axes extend beyond all data points
@@ -47,10 +47,10 @@ paths:
 [ ] Color semantics correct
 [ ] Arrow annotations point FROM label TO feature
 [ ] Axes extend beyond all data points
-[ ] Labels legible at presentation size
+[ ] Labels legible at final print size (column/text width in the compiled PDF)
 ```
 
 ## Single Source of Truth
 
-**The Beamer `.tex` file is the authoritative source for ALL TikZ diagrams.**
-Edit TikZ in the Beamer file FIRST, then copy verbatim to `extract_tikz.tex`.
+**The manuscript `.tex` source (or a standalone figure `.tex` in `Figures/`) is the authoritative source for each TikZ diagram.**
+If a diagram is maintained both inline and as a standalone figure, edit one copy FIRST, then copy it verbatim to the other.

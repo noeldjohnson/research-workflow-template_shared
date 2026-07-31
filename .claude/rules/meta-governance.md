@@ -9,7 +9,7 @@ Understanding this distinction is critical for deciding what to commit, what to 
 ## The Two Identities
 
 ### Identity 1: Working Project
-- We actively develop lecture slides, guides, and documentation
+- We actively develop the manuscript, analysis, and documentation
 - We accumulate learnings specific to our setup and workflow
 - We test new features and iterate on infrastructure
 - We have institutional context (your university, your field, your specific tools)
@@ -135,8 +135,8 @@ When creating or modifying content, ask:
 
 **Bad (too specific):**
 ```markdown
-# Beamer Compilation Rule
-Always use XeLaTeX with TEXINPATHS=../Preambles for our slides.
+# Manuscript Compilation Rule
+Always use XeLaTeX with TEXINPATHS=../Preambles for our paper.
 ```
 
 **Good (framework-oriented):**

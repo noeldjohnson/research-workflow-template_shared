@@ -1,14 +1,16 @@
 ---
 paths:
-  - "Slides/**/*.tex"
-  - "Quarto/**/*.qmd"
+  - "Paper/**/*.tex"
   - "scripts/**/*.R"
+  - "Figures/**/*"
+  - "Tables/**/*"
 ---
 
-# Course Knowledge Base: [YOUR COURSE NAME]
+# Paper Knowledge Base: [YOUR PAPER TITLE]
 
-<!-- Fill in the tables below with YOUR domain-specific content.
-     Claude reads this before creating/modifying any lecture content. -->
+<!-- Fill in the tables below with YOUR project-specific content.
+     Claude reads this before creating or modifying manuscript content, tables,
+     or figures, so notation and conventions stay consistent across the paper. -->
 
 ## Notation Registry
 
@@ -18,27 +20,34 @@ paths:
 
 ## Symbol Reference
 
-| Symbol | Meaning | Introduced |
-|--------|---------|------------|
+| Symbol | Meaning | Introduced (section) |
+|--------|---------|----------------------|
 | | | |
 
-## Lecture Progression
+## Section Map
 
-| # | Title | Core Question | Key Notation | Key Method |
-|---|-------|--------------|-------------|------------|
-| 1 | | | | |
+| # | Section | Purpose | Key Notation | Key Result |
+|---|---------|---------|-------------|------------|
+| 1 | Introduction | | | |
 | 2 | | | | |
+| 3 | | | | |
 
-## Empirical Applications
+## Empirical Applications / Data
 
-| Application | Paper | Dataset | Lecture(s) | Purpose |
-|------------|-------|---------|------------|---------|
+| Application | Paper / Source | Dataset | Section(s) | Purpose |
+|-------------|----------------|---------|------------|---------|
 | | | | | |
+
+## Estimand Registry
+
+| Estimand | Definition | Identifying Assumptions | Where Estimated |
+|----------|-----------|-------------------------|-----------------|
+| | | | |
 
 ## Design Principles
 
-| Principle | Evidence | Lectures Applied |
-|-----------|----------|-----------------|
+| Principle | Rationale | Where Applied |
+|-----------|-----------|---------------|
 | | | |
 
 ## Anti-Patterns (Don't Do This)
@@ -53,4 +62,10 @@ paths:
 |-----|--------|-----|
 | | | |
 
-<!-- For research projects, add: Estimand Registry, DGP Configs, Tolerance Thresholds -->
+## Tolerance Thresholds
+
+<!-- For replication/simulation: acceptable numerical differences. See replication-protocol.md. -->
+
+| Quantity | Tolerance | Rationale |
+|----------|-----------|-----------|
+| | | |

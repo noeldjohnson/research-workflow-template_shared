@@ -81,6 +81,7 @@ python3 scripts/quality_score.py Paper/main.tex
 | `/proofread [file]` | Grammar/typo/overflow review |
 | `/validate-bib` | Cross-reference citations |
 | `/review-paper [file]` | Manuscript review (argument, methods, citations) |
+| `/pedagogy-review [file]` | Exposition & writing-flow review (narrative, motivation, notation) |
 | `/lit-review [topic]` | Literature search + synthesis |
 | `/research-ideation [topic]` | Research questions + strategies |
 | `/interview-me [topic]` | Interactive research interview |

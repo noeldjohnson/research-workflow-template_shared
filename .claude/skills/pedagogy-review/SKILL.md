@@ -1,35 +1,33 @@
 ---
 name: pedagogy-review
-description: Run holistic pedagogical review on lecture slides. Checks narrative arc, student prerequisites, worked examples, notation clarity, and deck pacing.
-argument-hint: "[QMD or TEX filename]"
+description: Run holistic exposition and writing-flow review on the manuscript. Checks narrative arc, motivation, notation clarity, section pacing, and reader onboarding.
+argument-hint: "[TEX filename, defaults to the whole manuscript]"
 allowed-tools: ["Read", "Grep", "Glob", "Write", "Task"]
 ---
 
-# Pedagogical Review of Lecture Slides
+# Exposition Review of the Manuscript
 
-Perform a comprehensive pedagogical review.
+Perform a comprehensive exposition and writing-flow review — does the paper motivate, signpost, and read clearly?
 
 ## Steps
 
-1. **Identify the file** specified in `$ARGUMENTS`
-   - If no argument, ask user which lecture to review
-   - If just a name, look in `Quarto/` or `Slides/`
+1. **Identify the file(s)** specified in `$ARGUMENTS`
+   - If no argument, review the whole manuscript: `Paper/main.tex` and every section it inputs from `Paper/sections/`
+   - If a specific section file is named, review that section in the context of the whole
 
-2. **Launch the pedagogy-reviewer agent** with the full file path
-   - The agent checks 13 pedagogical patterns
-   - Performs deck-level analysis (narrative arc, pacing, visual rhythm, notation)
-   - Considers student perspective (prerequisites, objections)
+2. **Launch the pedagogy-reviewer agent** with the file path(s)
+   - The agent checks 12 exposition patterns (motivation-before-formalism, roadmap/signposting, results-framed-not-dumped, anticipating objections, notation consistency, conclusion-closes-the-loop, etc.)
+   - Performs manuscript-level analysis (narrative arc, pacing/balance, flow between sections, reader onboarding)
 
 3. **The agent produces a report** saved to:
    `quality_reports/[FILENAME_WITHOUT_EXT]_pedagogy_report.md`
 
 4. **Present summary to user:**
-   - Patterns followed vs violated (out of 13)
-   - Deck-level assessments
+   - Patterns followed vs violated (out of 12)
+   - Manuscript-level assessments
    - Critical recommendations (top 3-5)
 
 ## Important Notes
 
 - This is a **read-only review** — no files are edited
-- Focuses on **pedagogy** not visual layout (use `/visual-audit` for that)
-- For a combined review, use `/slide-excellence` instead
+- Focuses on **exposition and clarity**, not correctness (use `/review-paper` or the domain-reviewer for substance) or layout (use `/visual-audit`)
