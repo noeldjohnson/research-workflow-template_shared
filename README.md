@@ -9,10 +9,12 @@ A Claude Code-powered workflow for academic research papers. Clone this repo to 
 ### 1. Clone for a new project
 
 ```bash
-git clone /path/to/research-workflow-template ~/Dropbox/Research/my-new-paper
-cd ~/Dropbox/Research/my-new-paper
+git clone https://github.com/noeldjohnson/research-workflow-template_shared.git my-new-paper
+cd my-new-paper
 rm -rf .git && git init  # fresh git history
 ```
+
+Claude Code runs the hooks in `.claude/hooks/` on your machine, so read `.claude/settings.json` and the hooks before the first session.
 
 ### 2. Fill in CLAUDE.md
 
