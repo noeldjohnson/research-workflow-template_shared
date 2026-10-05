@@ -5,7 +5,8 @@ subsection headings, figure and table captions, panel labels, slide titles, and
 any other display line. Copy this file into a new project's `.claude/rules/` and
 reference it from that project's `CLAUDE.md`.
 
-Added 18 September 2026 at Noel's direction.
+Added 18 September 2026 at Noel's direction. Amended 25 September 2026 with the
+conjunction caveat and the repetition check at the end.
 
 ---
 
@@ -127,3 +128,43 @@ result.
 referee could challenge, so the heading has to make it openly. "Witch trials by
 town *are* from Leeson and Russ (2018)" only says where the data came from, so
 the phrase may stand.
+
+### A conjunction does not exempt the heading
+
+Added 25 September 2026, after two slide titles were cleared under permitted
+item 1 because their halves were joined by "and".
+
+"The famous inventions, and the wrong question" and "1910, and a puzzle" both
+read as coordinate lists at a glance. Run the test and they are not. "The famous
+inventions *are* the wrong question" is a substantive claim, and it was the
+slide's whole argument. "1910 *is* a puzzle" is a claim.
+
+A coordinate list holds parallel topics where no element predicates on another,
+as in "Durability, reach, and translation." Where the second element comments on
+the first, the "and" is apposition wearing a conjunction. Run the insert-is test
+on every candidate, including the ones a conjunction makes look safe.
+
+---
+
+## Repetition across a document
+
+Added 25 September 2026 at Noel's direction.
+
+A construction can comply in every instance and still fail the document. Nine of
+the 51 slide titles in one deck were built as "[something], and [something]" or
+opened with "And". Each was checked against this rule on its own and most of them
+passed, because most of them were genuine coordination. The repetition is the
+defect, and no per-heading check reaches it.
+
+The check is to read a finished document's headings as a column, in order, with
+the body stripped away. A shape recurring in more than about one heading in ten
+is a tic. Keep the instances where the structure earns its place and rewrite the
+rest.
+
+This extends the budgets in `state-it-plainly.md`, which ration two devices that
+are acceptable used sparingly and tiresome used often. The same arithmetic
+applies to any construction, and it is visible only at the scale of the whole
+document.
+
+Compliance and rhythm are separate passes over the same list, and a shape that
+recurs shows up only in the second.
