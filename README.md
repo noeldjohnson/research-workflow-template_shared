@@ -27,6 +27,8 @@ Edit `Preambles/header.tex`:
 - Add project-specific notation (e.g., `\newcommand{\treat}{T}`)
 - Adjust font if needed (default: Times New Roman, requires XeLaTeX)
 
+The preamble implements the house style documented in `.claude/rules/latex-formatting.md`. That is 12pt Times New Roman, one-inch margins, 1.5 line spacing, AER author-year citations, and booktabs tables. For talks, `Preambles/beamer-header.tex` is the matching Beamer preamble, and `Slides/example_talk.tex` (compiled as `Slides/example_talk.pdf`) shows each slide layout.
+
 ### 4. Add bibliography entries
 
 Edit `Bibliography_base.bib` with your references. Follow the naming convention: `AuthorYear_keyword`.
@@ -53,7 +55,8 @@ Open Claude Code in the project directory and begin. The workflow, skills, and a
 | Directory | Purpose |
 |-----------|---------|
 | `Paper/` | LaTeX manuscript (`main.tex` + modular `sections/`) |
-| `Preambles/` | LaTeX preamble and custom commands |
+| `Preambles/` | House-style preambles for the paper (`header.tex`) and for talks (`beamer-header.tex`) |
+| `Slides/` | Slide decks, with `example_talk.tex` as a worked example of the deck style |
 | `Figures/` | Figures (TikZ, R output, external) |
 | `Tables/` | `.tex` tables from R analysis |
 | `Data/raw/` | Original source data (never modify) |

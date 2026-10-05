@@ -27,7 +27,10 @@
 ├── Paper/                       # LaTeX manuscript
 │   ├── main.tex                 # Main document (inputs sections)
 │   └── sections/                # Modular .tex sections
-├── Preambles/header.tex         # LaTeX preamble and custom commands
+├── Preambles/                   # House-style preambles
+│   ├── header.tex               # Paper preamble and custom commands
+│   └── beamer-header.tex        # Beamer preamble for talks
+├── Slides/                      # Slide decks (example_talk.tex shows each layout)
 ├── Figures/                     # Figures (TikZ, R output, external)
 ├── Tables/                      # .tex tables from R analysis
 ├── Data/                        # Research data
@@ -53,6 +56,9 @@ cd Paper && TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode m
 BIBINPUTS=..:$BIBINPUTS bibtex main
 TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode main.tex
 TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode main.tex
+
+# Slide deck (XeLaTeX, from Slides/)
+cd Slides && xelatex -interaction=nonstopmode example_talk.tex
 
 # Run R analysis
 Rscript scripts/analysis_name.R
