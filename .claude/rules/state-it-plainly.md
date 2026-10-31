@@ -114,6 +114,49 @@ Write the design and what it produces: "A design that reads persecutory print
 by city and year as local persecutory culture produces the aggregate
 co-movement and fails every local test." 
 
+### 6. Measurement housekeeping outside the data section
+
+Added 31 October 2026 at Noel's direction, after a revised abstract ended
+"The measures correct for the number of titles in each city and count each
+periodical once per city and decade."
+
+How a measure was built, what it corrects for, what unit it counts, and what
+was collapsed or dropped are stated once, in the data or measurement section,
+where a reader can check them. They do not appear in the abstract, the
+introduction, the results, or the conclusion. A correction that changed a
+result is recorded in the appendix beside the uncorrected number. The main text
+reports the corrected number and nothing about its history.
+
+The test is the same outsider test as species 5. A sentence about what the
+measure does to the data is about the notebook. A sentence about what the
+measure shows is about the finding.
+
+### 7. Hedging before the number, or more than once
+
+Added 31 October 2026 at Noel's direction, after the same abstract carried
+"The share of useful content has a positive coefficient that is not
+statistically different from zero."
+
+A result is qualified once, where it is reported, at the precision its
+interval gives. It is not qualified in the abstract, again in the
+introduction, again in the results, and again in the conclusion. A null is
+reported in the section that tested it and nowhere else, unless the null is
+the paper's finding. An abstract states what the paper found. It does not
+list what it looked for and did not find.
+
+The test is whether a sentence adds precision or subtracts confidence. "The
+coefficient is 0.08 with a standard error of 0.06" adds precision and belongs
+in the results. "The coefficient is positive but not statistically different
+from zero" subtracts confidence and belongs nowhere, since the first sentence
+already says it.
+
+- *wrong (abstract):* "The share of useful content has a positive coefficient
+  that is not statistically different from zero. The measures correct for the
+  number of titles in each city and count each periodical once per city and
+  decade."
+  *right:* cut both. The first belongs in Section 9 as a number with its
+  standard error. The second belongs in Section 2 as the measurement rule.
+
 ## Permitted in moderation
 
 Noel's ruling of 18 September 2026: these two are acceptable used sparingly and
